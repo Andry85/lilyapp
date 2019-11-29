@@ -1,5 +1,6 @@
 import React from 'react';
 import './Nav.css';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 class NavElement extends React.Component {
@@ -12,7 +13,9 @@ class NavElement extends React.Component {
   render() {
     return (
       <li className="nav__item" onClick={this.props.action}>
-        <a className="nav__link" href={this.props.elentHref}>{this.props.elentText}</a>
+        <div className="nav__link">
+            <Link to={this.props.elentHref}>{this.props.elentText}</Link>
+        </div>
       </li>
     );
   }

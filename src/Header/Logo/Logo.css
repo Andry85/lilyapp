@@ -1,16 +1,22 @@
-a.logo {
+.logo {
     display: flex;
     align-items: center;
     color: #fff;
     margin: 0 0 0 11px;
 }
-a.logo::before {
+.logo a {
+    color: #fff;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.logo::before {
     content: '';
     background: url(./img/logo.png) no-repeat;
     width: 76px;
     height: 76px;
 }
-a.logo:hover {
+.logo:hover {
     text-decoration: none;
 }
 .logo__text {

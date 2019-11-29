@@ -77,3 +77,18 @@ input.PopupForm__field {
 .PopupForm__col--full {
     flex-basis: 100%;
 }
+
+
+@media only screen and (max-width: 767px) {
+    
+    .PopupForm__formIneer {
+        padding: 45px 20px;
+        height: 100vh;
+        max-height: 100vh;
+    }
+    input.PopupForm__field {
+        height: 44px;
+        line-height: 44px;
+    }
+
+}
