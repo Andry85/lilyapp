@@ -2,7 +2,7 @@ import React from 'react';
 import './Content.css';
 import Work from './Work/Work';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";

@@ -9,7 +9,7 @@ import Footer from './Footer/Footer';
 import PopupForm from './PopupForm/PopupForm';
 import Content from './Content/Content';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
