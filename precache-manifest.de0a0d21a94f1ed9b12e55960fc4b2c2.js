@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e9bf4538efa4d30f836a55bdd4225303",
+    "revision": "2cbd116171859d9d46bd8db31118b52b",
     "url": "/lilyapp/index.html"
   },
   {
-    "revision": "e4d8559b9bb499315b20",
-    "url": "/lilyapp/static/css/main.2418aaf3.chunk.css"
+    "revision": "b2d629a907f43126434b",
+    "url": "/lilyapp/static/css/main.74a49c6b.chunk.css"
   },
   {
-    "revision": "4d2bc74fe529b2c019f7",
-    "url": "/lilyapp/static/js/2.dacdfe5a.chunk.js"
+    "revision": "c969ce363d2640c13527",
+    "url": "/lilyapp/static/js/2.89612bc3.chunk.js"
   },
   {
-    "revision": "e4d8559b9bb499315b20",
-    "url": "/lilyapp/static/js/main.891d48ca.chunk.js"
+    "revision": "b2d629a907f43126434b",
+    "url": "/lilyapp/static/js/main.97fc5635.chunk.js"
   },
   {
     "revision": "035c282c7f0cec316286",
     "url": "/lilyapp/static/js/runtime-main.8ba40ae5.js"
+  },
+  {
+    "revision": "1c2c977209cc7ca2c2c4880a7a4313e7",
+    "url": "/lilyapp/static/media/andriiShapoval.1c2c9772.jpg"
   },
   {
     "revision": "eb880f59af92cd1eb64db72bea163f5d",
@@ -70,10 +74,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3ad3da07d0bf8593bd748684c77ecc4e",
     "url": "/lilyapp/static/media/mi_02.3ad3da07.jpg"
-  },
-  {
-    "revision": "3ea72980b0a006a2b8522802efdb6abd",
-    "url": "/lilyapp/static/media/oksana.3ea72980.png"
   },
   {
     "revision": "da504eb8b0a8f3515f60f533dc3f80a7",
