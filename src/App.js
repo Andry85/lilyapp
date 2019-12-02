@@ -13,13 +13,20 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 
 function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/">  
+          <Route exact path="/">
             <div className="wrap">
+              <Helmet>
+                  <meta charSet="utf-8" />
+                  <title>Lily web agency</title>
+                  <meta name="description" content="Creating web sites and web applications" />
+              </Helmet>
               <Header isMainPage={true}/>
               <Slider/>
               <Team/>

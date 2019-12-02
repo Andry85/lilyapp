@@ -6,6 +6,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 import ifs_big_pic_01 from './Work/img/ifs/ifs_01.png';
 import ifs_big_pic_02 from './Work/img/ifs/ifs_02.png';
@@ -84,12 +85,27 @@ class Content extends React.Component {
           <Switch>
               <Route path="/content/ifs">  
                 <Work title={works[0].title} desk={works[0].desk} urlLink={works[0].urlLink} urlText={works[0].urlText} images={content_1}/>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>IFS</title>
+                    <meta name="description" content="IFS our project" />
+                </Helmet>
               </Route>
               <Route path="/content/vitukraina">
                 <Work title={works[1].title} desk={works[1].desk} urlLink={works[1].urlLink} urlText={works[1].urlText} images={content_2}/>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Vitukraina</title>
+                    <meta name="description" content="Vitukraina our project" />
+                </Helmet>
               </Route>
               <Route path="/content/mehinvest">
                 <Work title={works[2].title} desk={works[2].desk} urlLink={works[2].urlLink} urlText={works[2].urlText} images={content_3}/>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Mehinvest</title>
+                    <meta name="description" content="Mehinvest our project" />
+                </Helmet>
               </Route>
           </Switch>
         </div>

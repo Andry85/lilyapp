@@ -3,6 +3,7 @@ import './Header.css';
 import Logo from './Logo/Logo';
 import Btn from './Btn/Btn';
 import Nav from './Nav/Nav';
+import {Helmet} from "react-helmet";
 
 class HeaderInner extends React.Component {
   render() {
@@ -33,7 +34,7 @@ class Header extends React.Component {
       headerClass = 'header header__inner';
     }
 
-    return (
+    return ( 
       <header className={headerClass}>
         <div className="inner">
           <Logo name="Lily Web Agency"></Logo>

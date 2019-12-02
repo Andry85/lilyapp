@@ -49,9 +49,14 @@
     margin: 0 20px 20px 0;
     position: relative;
 }
+.WorkersTeamWrap ul li img {
+    width: 100%;
+}
+
 .WorkersTeamInner {
     position: absolute;
     background: rgba(253, 114, 30, 0.9);
+    padding: 10px;
     left: 20px;
     top: 20px;
     right: 20px;
@@ -70,6 +75,7 @@
 .WorkersTeam__desc {
     font-size: 1.3rem;
     text-transform: uppercase;
+    text-align: center;
 }
 .WorkersTeamWrap ul li:hover .WorkersTeamInner {
     opacity: 1;

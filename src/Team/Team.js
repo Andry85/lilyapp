@@ -1,7 +1,7 @@
 import React from 'react';
 import './Team.css';
 
-import worker_1 from './img/oksana.png';
+import worker_1 from './img/andriiShapoval.jpg';
 import worker_2 from './img/olga.png';
 import worker_3 from './img/maryna.png';
 import worker_4 from './img/gena.png';
@@ -12,8 +12,8 @@ import worker_4 from './img/gena.png';
 const workers = [
   {
     id: 1, 
-    name: 'Oksana Kovaleva', 
-    position: 'CTO',
+    name: 'Andii Shapoval', 
+    position: 'React JS Developer and UI designer',
     img: worker_1
 
   },
