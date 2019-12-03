@@ -16,7 +16,16 @@ import {
 import {Helmet} from "react-helmet";
 
 
-function App() {
+
+
+
+
+
+
+function App(props) {
+
+  
+
   return (
     <Router>
       <Switch>
@@ -29,7 +38,7 @@ function App() {
               </Helmet>
               <Header isMainPage={true}/>
               <Slider/>
-              <Team/>
+              <Team workers={props.workers} />
               <Testimonials/>
               <MapContainer/>
               <Footer/>
@@ -39,7 +48,7 @@ function App() {
           <Route path="/content/">
             <div className="wrap">
                 <Header isMainPage={false} />
-                <Content/>
+                <Content works={props.works}/>
                 <Footer/>
                 <PopupForm/>
             </div>
