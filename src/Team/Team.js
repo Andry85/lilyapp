@@ -3,8 +3,6 @@ import './Team.css';
 
 
 
-
-
 function WorkersTeam(props) {
   const numberWorkers = props.team;
   const items = numberWorkers.map((worker) =>

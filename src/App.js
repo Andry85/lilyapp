@@ -38,7 +38,7 @@ function App(props) {
               </Helmet>
               <Header isMainPage={true}/>
               <Slider/>
-              <Team workers={props.workers} />
+              <Team workers={props.state.workers} />
               <Testimonials/>
               <MapContainer/>
               <Footer/>
@@ -48,7 +48,7 @@ function App(props) {
           <Route path="/content/">
             <div className="wrap">
                 <Header isMainPage={false} />
-                <Content works={props.works}/>
+                <Content works={props.state.works}/>
                 <Footer/>
                 <PopupForm/>
             </div>

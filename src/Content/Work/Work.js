@@ -7,7 +7,6 @@ import './Work.css';
 class Work extends React.Component {
   constructor() {
     super();
-    this.state = {color: "red"};
   }
   render() {
     return (

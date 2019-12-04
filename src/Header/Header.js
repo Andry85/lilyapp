@@ -3,7 +3,7 @@ import './Header.css';
 import Logo from './Logo/Logo';
 import Btn from './Btn/Btn';
 import Nav from './Nav/Nav';
-import {Helmet} from "react-helmet";
+
 
 class HeaderInner extends React.Component {
   render() {
