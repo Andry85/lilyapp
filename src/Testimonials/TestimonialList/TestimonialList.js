@@ -79,7 +79,7 @@ class TestimonialList extends React.Component {
     return (
       <Slider {...settings}>
         
-        <TestimonialListInner clientssay={testimonials} />
+        {/* <TestimonialListInner clientssay={testimonials} /> */}
 
       </Slider>
     );

@@ -42,7 +42,7 @@ function App(props) {
               <Testimonials/>
               <MapContainer/>
               <Footer/>
-              <PopupForm/>
+              <PopupForm addLetter={props.addLetter}/>
             </div>
           </Route>
           <Route path="/content/">
@@ -50,7 +50,7 @@ function App(props) {
                 <Header isMainPage={false} />
                 <Content works={props.state.works}/>
                 <Footer/>
-                <PopupForm/>
+                <PopupForm addLetter={props.addLetter}/>
             </div>
           </Route>
         </Switch>
