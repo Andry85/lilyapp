@@ -1,16 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import stat from './redux/state';
-import {addLetter} from './redux/state';
+import {rerenderTree} from "./render";
+import state from './redux/state';
 
 
-export let rerenderTree = () => {
-    ReactDOM.render(<App state={state} addLetter={addLetter} />, document.getElementById('root'));
-}
-rerenderTree();
+rerenderTree(state);
 
 
 

@@ -1,3 +1,5 @@
+import {rerenderTree} from "../render";
+
 import worker_1 from './../Team/img/andriiShapoval.jpg';
 import worker_2 from './../Team/img/olga.png';
 import worker_3 from './../Team/img/maryna.png';
@@ -98,7 +100,8 @@ export let addLetter = (count,name,email,message) => {
 
   };
   state.letters.push(newLetter);
-  rerenderTree();
+  rerenderTree(state);
+  debugger;
 }
 
 export default state;

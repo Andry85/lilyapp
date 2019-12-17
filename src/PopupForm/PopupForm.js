@@ -71,7 +71,7 @@ class PopupForm extends React.Component {
             <div className="PopupForm__row">
               <div className="PopupForm__col--full">
                 <label className="PopupForm__label">Your message:</label>
-                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea}></textarea>
+                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea}/>
               </div>
             </div>
             <button onClick={this.Addletter} className="PopupForm__btn">SEND</button>
