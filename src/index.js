@@ -4,9 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import stat from './redux/state';
+import {addLetter} from './redux/state';
 
 
-ReactDOM.render(<App dates={stat} />, document.getElementById('root'));
+export let rerenderTree = () => {
+    ReactDOM.render(<App state={state} addLetter={addLetter} />, document.getElementById('root'));
+}
+rerenderTree();
+
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

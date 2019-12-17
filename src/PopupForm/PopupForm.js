@@ -10,13 +10,15 @@ class PopupForm extends React.Component {
     this.state = {
       value: 'Send us a letter.',
       name: 'Enter Your name',
-      email: 'Enter Your email'
+      email: 'Enter Your email',
+      countletter: 0
     };
 
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
+    this.Addletter = this.Addletter.bind(this);
 
   }
 
@@ -40,6 +42,16 @@ class PopupForm extends React.Component {
   hidepopup() {
     document.getElementById('PopupForm').classList.remove("visible");
   }
+
+  Addletter = () => {
+    debugger;
+    this.setState({countletter: this.state.countletter + 1});
+    this.props.addLetter(this.state.countletter, this.state.name, this.state.email, this.state.value);
+    document.getElementById('PopupForm').classList.remove("visible");
+  }
+  
+
+
   render() {
     return (
       <div id="PopupForm" className="PopupForm">
@@ -62,7 +74,7 @@ class PopupForm extends React.Component {
                 <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea}></textarea>
               </div>
             </div>
-            <button className="PopupForm__btn">SEND</button>
+            <button onClick={this.Addletter} className="PopupForm__btn">SEND</button>
           </form>
         </div>
       </div>

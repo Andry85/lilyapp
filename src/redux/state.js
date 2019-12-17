@@ -15,7 +15,7 @@ import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.p
 
 
 
-let st = {
+let state = {
     workers: [
         {
           id: 1, 
@@ -81,8 +81,24 @@ let st = {
             mehinvest_big_pic_03
           ]
         }
+    ],
+    letters: [
+
     ]
 
 }
 
-export default st;
+export let addLetter = (count,name,email,message) => {
+  
+  let newLetter = {
+    id: count,
+    name: name,
+    email: email,
+    message: message
+
+  };
+  state.letters.push(newLetter);
+  rerenderTree();
+}
+
+export default state;
