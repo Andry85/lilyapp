@@ -15,7 +15,7 @@ import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.p
 
 
 
-let state = {
+let st = {
     workers: [
         {
           id: 1, 
@@ -85,4 +85,4 @@ let state = {
 
 }
 
-export default state;
+export default st;

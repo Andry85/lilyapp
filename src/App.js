@@ -22,6 +22,7 @@ import {Helmet} from "react-helmet";
 
 
 
+
 function App(props) {
 
   
@@ -38,7 +39,7 @@ function App(props) {
               </Helmet>
               <Header isMainPage={true}/>
               <Slider/>
-              <Team workers={props.state.workers} />
+              <Team workers={props.dates.workers} />
               <Testimonials/>
               <MapContainer/>
               <Footer/>
@@ -48,7 +49,7 @@ function App(props) {
           <Route path="/content/">
             <div className="wrap">
                 <Header isMainPage={false} />
-                <Content works={props.state.works}/>
+                <Content works={props.dates.works}/>
                 <Footer/>
                 <PopupForm/>
             </div>
