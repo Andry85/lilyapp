@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addLetter} from './redux/state';
+import store from './redux/state';
 
 
 export let rerenderTree = (state) => {
-    ReactDOM.render(<App dates={state} addLetter={addLetter} />, document.getElementById('root'));
+    ReactDOM.render(<App dates={state} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
 

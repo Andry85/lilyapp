@@ -46,7 +46,13 @@ class PopupForm extends React.Component {
   Addletter = () => {
     debugger;
     this.setState({countletter: this.state.countletter + 1});
-    this.props.addLetter(this.state.countletter, this.state.name, this.state.email, this.state.value);
+    this.props.dispatch({
+      type: 'ADD-LETTER',
+      count: this.state.countletter,
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.value
+    });
     document.getElementById('PopupForm').classList.remove("visible");
   }
   

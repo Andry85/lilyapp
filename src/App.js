@@ -43,7 +43,7 @@ function App(props) {
               <Testimonials/>
               <MapContainer/>
               <Footer/>
-              <PopupForm addLetter={props.addLetter}/>
+              <PopupForm dispatch={props.dispatch}/>
             </div>
           </Route>
           <Route path="/content/">
@@ -51,7 +51,7 @@ function App(props) {
                 <Header isMainPage={false} />
                 <Content works={props.dates.works}/>
                 <Footer/>
-                <PopupForm addLetter={props.addLetter}/>
+                <PopupForm dispatch={props.dispatch}/>
             </div>
           </Route>
         </Switch>

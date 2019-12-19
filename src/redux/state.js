@@ -17,91 +17,99 @@ import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.p
 
 
 
-let state = {
-    workers: [
-        {
-          id: 1, 
-          name: 'Andii Shapoval', 
-          position: 'React JS Developer and UI designer',
-          img: worker_1
-      
-        },
-        {
-          id: 2, 
-          name: 'Olga Petrova', 
-          position: 'Account manager',
-          img: worker_2
-      
-        },
-        {
-          id: 3, 
-          name: 'Maryna Petrova', 
-          position: 'Sales manager',
-          img: worker_3
-        },
-        {
-          id: 4, 
-          name: 'Kovalenko Gennady', 
-          position: 'CEO',
-          img: worker_4
-        }
+let store = {
+  _state: {
+      workers: [
+          {
+            id: 1, 
+            name: 'Andii Shapoval', 
+            position: 'React JS Developer and UI designer',
+            img: worker_1
+        
+          },
+          {
+            id: 2, 
+            name: 'Olga Petrova', 
+            position: 'Account manager',
+            img: worker_2
+        
+          },
+          {
+            id: 3, 
+            name: 'Maryna Petrova', 
+            position: 'Sales manager',
+            img: worker_3
+          },
+          {
+            id: 4, 
+            name: 'Kovalenko Gennady', 
+            position: 'CEO',
+            img: worker_4
+          }
+        ],
+      works: [
+          {
+            id: 1, 
+            title: 'Ifs', 
+            desk: 'Task: Create a website for an UK consulting company.',
+            urlLink:'http://www.interfis.com/',
+            urlText:'www.interfis.com',
+            pictures: [
+              ifs_big_pic_01,
+              ifs_big_pic_02,
+              ifs_big_pic_03
+            ]
+          },
+          { 
+            id: 2, 
+            title: 'VitUkraina', 
+            desk: 'Task: Create a website for an Ukranian building company.',
+            urlLink:'https://vitukraina.com.ua/en/home/',
+            urlText:'www.vitukraina.com.ua',
+            pictures: [
+              vitukraina_big_pic_01,
+              vitukraina_big_pic_02,
+              vitukraina_big_pic_03
+            ]
+          },
+          { 
+            id: 3, 
+            title: 'Mehinvest', 
+            desk: 'Task: Create a website for a roads building company.',
+            urlLink:'http://mehinvest.com.ua/',
+            urlText:'www.mehinvest.com.ua',
+            pictures: [
+              mehinvest_big_pic_01,
+              mehinvest_big_pic_02,
+              mehinvest_big_pic_03
+            ]
+          }
       ],
-    works: [
-        {
-          id: 1, 
-          title: 'Ifs', 
-          desk: 'Task: Create a website for an UK consulting company.',
-          urlLink:'http://www.interfis.com/',
-          urlText:'www.interfis.com',
-          pictures: [
-            ifs_big_pic_01,
-            ifs_big_pic_02,
-            ifs_big_pic_03
-          ]
-        },
-        { 
-          id: 2, 
-          title: 'VitUkraina', 
-          desk: 'Task: Create a website for an Ukranian building company.',
-          urlLink:'https://vitukraina.com.ua/en/home/',
-          urlText:'www.vitukraina.com.ua',
-          pictures: [
-            vitukraina_big_pic_01,
-            vitukraina_big_pic_02,
-            vitukraina_big_pic_03
-          ]
-        },
-        { 
-          id: 3, 
-          title: 'Mehinvest', 
-          desk: 'Task: Create a website for a roads building company.',
-          urlLink:'http://mehinvest.com.ua/',
-          urlText:'www.mehinvest.com.ua',
-          pictures: [
-            mehinvest_big_pic_01,
-            mehinvest_big_pic_02,
-            mehinvest_big_pic_03
-          ]
-        }
-    ],
-    letters: [
+      letters: [
 
-    ]
+      ]
+
+  },
+  getState() {
+    return this._state;
+  },
+  dispatch(action) { //{type: 'ADD-LETTER'}
+    if(action.type==='ADD-LETTER') {
+
+      let newLetter = {
+        id: action.count,
+        name: action.name,
+        email: action.email,
+        message: action.message
+      };
+      this._state.letters.push(newLetter);
+      rerenderTree(this._state);
+      console.log(this._state.letters);
+      debugger;
+    }
+  }
 
 }
 
-export let addLetter = (count,name,email,message) => {
-  
-  let newLetter = {
-    id: count,
-    name: name,
-    email: email,
-    message: message
-
-  };
-  state.letters.push(newLetter);
-  rerenderTree(state);
-  debugger;
-}
-
-export default state;
+export default store;
+window.store = store;
