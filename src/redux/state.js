@@ -16,6 +16,9 @@ import mehinvest_big_pic_02 from './../Content/Work/img/mehinvest/mehinvest_02.p
 import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.png';
 
 
+const ADD_LETTER = "ADD-LETTER";
+const SAVE_LETTER_TEXT = "SAVE-LETTER-TEXT";
+
 
 let store = {
   _state: {
@@ -93,8 +96,12 @@ let store = {
   getState() {
     return this._state;
   },
-  dispatch(action) { //{type: 'ADD-LETTER'}
-    if(action.type==='ADD-LETTER') {
+
+  subscribe (observer) {
+    this._callSubcriber= observer;
+  },
+  dispatch(action) {
+    if(action.type === ADD_LETTER) {
 
       let newLetter = {
         id: action.count,
@@ -103,13 +110,34 @@ let store = {
         message: action.message
       };
       this._state.letters.push(newLetter);
-      rerenderTree(this._state);
       console.log(this._state.letters);
       debugger;
+    } else if (action.type === SAVE_LETTER_TEXT) {
+      let changedText = action.message;
+      console.log(changedText);
     }
   }
 
 }
+
+export const addletterActionCreater = (countletter, name, email, value) => {
+  return {
+    type: ADD_LETTER,
+    count: countletter,
+    name: name,
+    email: email,
+    message: value
+  }
+}
+
+export const saveLatter = (value) => {
+  return {
+    type: SAVE_LETTER_TEXT,
+    message: value
+  }
+}
+
+
 
 export default store;
 window.store = store;
