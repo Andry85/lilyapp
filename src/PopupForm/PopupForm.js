@@ -1,7 +1,7 @@
 import React from 'react';
 import './PopupForm.css';
-import {addletterActionCreater} from '../redux/state';
-import {saveLatter} from '../redux/state';
+import {addletterActionCreater} from '../redux/contactForm-reducer';
+import {saveLatter} from '../redux/contactForm-reducer';
 
 
 

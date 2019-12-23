@@ -1,4 +1,6 @@
-import {rerenderTree} from "../render";
+import contactFormReducer from "./contactForm-reducer";
+
+
 
 import worker_1 from './../Team/img/andriiShapoval.jpg';
 import worker_2 from './../Team/img/olga.png';
@@ -15,9 +17,6 @@ import mehinvest_big_pic_01 from './../Content/Work/img/mehinvest/mehinvest_01.p
 import mehinvest_big_pic_02 from './../Content/Work/img/mehinvest/mehinvest_02.png';
 import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.png';
 
-
-const ADD_LETTER = "ADD-LETTER";
-const SAVE_LETTER_TEXT = "SAVE-LETTER-TEXT";
 
 
 let store = {
@@ -101,41 +100,14 @@ let store = {
     this._callSubcriber= observer;
   },
   dispatch(action) {
-    if(action.type === ADD_LETTER) {
 
-      let newLetter = {
-        id: action.count,
-        name: action.name,
-        email: action.email,
-        message: action.message
-      };
-      this._state.letters.push(newLetter);
-      console.log(this._state.letters);
-      debugger;
-    } else if (action.type === SAVE_LETTER_TEXT) {
-      let changedText = action.message;
-      console.log(changedText);
-    }
+    this._state.letters = contactFormReducer(this._state.letters, action);
+
   }
 
 }
 
-export const addletterActionCreater = (countletter, name, email, value) => {
-  return {
-    type: ADD_LETTER,
-    count: countletter,
-    name: name,
-    email: email,
-    message: value
-  }
-}
 
-export const saveLatter = (value) => {
-  return {
-    type: SAVE_LETTER_TEXT,
-    message: value
-  }
-}
 
 
 
