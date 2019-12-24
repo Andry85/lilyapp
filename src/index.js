@@ -1,9 +1,11 @@
 import * as serviceWorker from './serviceWorker';
 import {rerenderTree} from "./render";
-import store from './redux/state';
+import store from './redux/redux-store';
 
 
 rerenderTree(store.getState());
+
+store.subscribe(rerenderTree);
 
 
 

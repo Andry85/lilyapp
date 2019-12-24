@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './redux/state';
+import store from './redux/redux-store';
 import {
     HashRouter as Router,
     Switch,
@@ -10,6 +10,7 @@ import {
 
 
 export let rerenderTree = (state) => {
+    debugger;
     ReactDOM.render(
         <Router>
             <Switch>
