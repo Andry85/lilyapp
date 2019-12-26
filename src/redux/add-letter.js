@@ -1,11 +1,7 @@
-const ADD_LETTER = "ADD-LETTER";
-const SAVE_LETTER_TEXT = "SAVE-LETTER-TEXT";
-
 import worker_1 from './../Team/img/andriiShapoval.jpg';
 import worker_2 from './../Team/img/olga.png';
 import worker_3 from './../Team/img/maryna.png';
 import worker_4 from './../Team/img/gena.png';
-
 import ifs_big_pic_01 from './../Content/Work/img/ifs/ifs_01.png';
 import ifs_big_pic_02 from './../Content/Work/img/ifs/ifs_02.png';
 import ifs_big_pic_03 from './../Content/Work/img/ifs/ifs_03.png';
@@ -15,6 +11,11 @@ import vitukraina_big_pic_03 from './../Content/Work/img/vitukraina/vitukraina_0
 import mehinvest_big_pic_01 from './../Content/Work/img/mehinvest/mehinvest_01.png';
 import mehinvest_big_pic_02 from './../Content/Work/img/mehinvest/mehinvest_02.png';
 import mehinvest_big_pic_03 from './../Content/Work/img/mehinvest/mehinvest_03.png';
+
+
+
+const ADD_LETTER = "ADD-LETTER";
+const SAVE_LETTER_TEXT = "SAVE-LETTER-TEXT";
 
 let initialState = {
     workers: [

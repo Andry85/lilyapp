@@ -10,7 +10,6 @@ import {
 
 
 export let rerenderTree = (state) => {
-    debugger;
     ReactDOM.render(
         <Router>
             <Switch>
