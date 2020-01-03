@@ -1,11 +1,26 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {
+    HashRouter as Router,
+    Switch,
+  } from "react-router-dom";
+import store from './redux/redux-store';  
+import StoreConext from './storeContext';
 import * as serviceWorker from './serviceWorker';
-import {rerenderTree} from "./render";
-import store from './redux/redux-store';
 
+let state = store.getState(); 
 
-rerenderTree(store.getState());
-
-store.subscribe(rerenderTree);
+ReactDOM.render(
+<Router>
+    <Switch>
+        <StoreConext.Provider value={store}>  
+            <App dates={state} dispatch={store.dispatch.bind(store)}/>
+        </StoreConext.Provider> 
+    </Switch>
+</Router>
+, document.getElementById('root'));
 
 
 

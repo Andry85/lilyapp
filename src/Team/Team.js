@@ -1,5 +1,6 @@
 import React from 'react';
 import './Team.css';
+import StoreConext from '../storeContext';
 
 
 
@@ -31,7 +32,20 @@ class Team extends React.Component {
         <div className="team_circle"></div>
         <div className="team__inner">
           <div className="WorkersTeamWrap">
-              <WorkersTeam team={this.props.workers}/>
+              
+              {/* <WorkersTeam team={this.props.workers}/> */}
+
+              <StoreConext.Consumer> 
+                  {
+                    (store) => {
+                      
+                      let state = store.getState();  
+                      debugger;
+                      return <WorkersTeam team={state.letter.workers}/>
+                    }
+                  }
+                </StoreConext.Consumer>
+
           </div>
           <div className="team__text">
             <h2 className="team__title">Team</h2>

@@ -2,18 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './redux/redux-store';
 import {
     HashRouter as Router,
     Switch,
   } from "react-router-dom";
+import StoreConext from './storeContext';
 
 
 export let rerenderTree = (state) => {
     ReactDOM.render(
         <Router>
             <Switch>
-                <App dates={state} dispatch={store.dispatch.bind(store)} />
+                <StoreConext.Provider value={state}>  
+                    {/* <App dates={state} dispatch={store.dispatch.bind(store)} /> */}
+                    <App/>
+                </StoreConext.Provider> 
             </Switch>
         </Router>
     , document.getElementById('root'));

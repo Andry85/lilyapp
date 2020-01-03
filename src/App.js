@@ -17,8 +17,6 @@ import {Helmet} from "react-helmet";
 
 function App(props) {
 
-  debugger;
-  
 
   return (
         <div className="wrap">
@@ -30,7 +28,7 @@ function App(props) {
                 </Helmet>
                 <Header isMainPage={true}/>
                 <Slider/>
-                <Team workers={props.dates.letter.workers} />
+                <Team />
                 <Testimonials/>
                 <MapContainer/>
                 
@@ -42,6 +40,7 @@ function App(props) {
                       <meta name="description" content="Creating web sites and web applications works" />
                   </Helmet>
                   <Header isMainPage={false} />
+         
                   <Content works={props.dates.letter.works}/>
             </Route>
             <PopupForm dispatch={props.dispatch}/>
