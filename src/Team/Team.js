@@ -40,7 +40,7 @@ class Team extends React.Component {
                     (store) => {
                       
                       let state = store.getState();  
-                      debugger;
+                    
                       return <WorkersTeam team={state.letter.workers}/>
                     }
                   }
