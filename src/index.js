@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
-import {
-    HashRouter as Router,
-    Switch,
-  } from "react-router-dom";
-import store from './redux/redux-store';  
-import StoreConext from './storeContext';
+import {HashRouter as Router, Switch,} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 
-let state = store.getState(); 
+import { createStore } from 'redux';
+import lilyApp from './reducers';
+const store = createStore(lilyApp);
+
+console.log(store.getState())
+
+
 
 ReactDOM.render(
-<Router>
-    <Switch>
-        <StoreConext.Provider value={store}>  
-            <App dates={state} dispatch={store.dispatch.bind(store)}/>
-        </StoreConext.Provider> 
-    </Switch>
-</Router>
+    <Provider store={store}>   
+        <Router>
+            <Switch>
+                    <App/>
+            </Switch>
+        </Router>
+    </Provider> 
 , document.getElementById('root'));
 
 

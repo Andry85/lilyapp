@@ -1,26 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './PopupForm.css';
-import {addletterActionCreater} from '../redux/add-letter';
-import {saveLatter} from '../redux/add-letter';
-
+import {addLetter} from '../actions/actions';
 
 
 class PopupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.hidepopup = this.hidepopup.bind(this);
+    this.myRefForm = React.createRef();
+    
     this.state = {
-      value: 'Send us a letter.',
+      value: 'Enter Your message',
       name: 'Enter Your name',
       email: 'Enter Your email',
-      countletter: 0
     };
 
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
-    this.Addletter = this.Addletter.bind(this);
+    this.hidepopup = this.hidepopup.bind(this);
 
 
 
@@ -34,54 +33,47 @@ class PopupForm extends React.Component {
   }
   handleTextArea(event) {
     this.setState({value: event.target.value});
-    this.props.dispatch(saveLatter(this.state.value));
+    
   }
 
   handleSubmit(event) {
-    console.log('The letter was: ' + this.state.value);
-    console.log('Your name is: ' + this.state.name);
-    console.log('Your email is: ' + this.state.email);
     event.preventDefault();
+    this.props.addMessage(this.state.value, this.state.name, this.state.email);
+    this.myRefForm.current.classList.remove("visible");
   }
 
   hidepopup() {
-    document.getElementById('PopupForm').classList.remove("visible");
+    this.myRefForm.current.classList.remove("visible");
   }
 
-  Addletter = () => {
-    debugger;
-    this.setState({countletter: this.state.countletter + 1});
-    this.props.dispatch(addletterActionCreater(this.state.countletter, this.state.name, this.state.email, this.state.value));
-    document.getElementById('PopupForm').classList.remove("visible");
+  componentDidMount() {
+
   }
-
-  
-  
-
 
   render() {
     return (
-      <div id="PopupForm" className="PopupForm">
+      <div id="PopupForm" className="PopupForm" ref={this.myRefForm}>
         <div className="PopupForm__form">
           <span onClick={this.hidepopup} className="PopupForm__close"></span>
           <form className="PopupForm__formIneer" onSubmit={this.handleSubmit}>
             <div className="PopupForm__row">
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your name:</label>
-                <input className="PopupForm__field" type="text" onChange={this.handleName} />
+                <input className="PopupForm__field" type="text" onChange={this.handleName} placeholder={this.state.name} />
               </div>
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your email:</label>
-                <input className="PopupForm__field" type="email" onChange={this.handleEmail} />
+                <input className="PopupForm__field" type="email" onChange={this.handleEmail} placeholder={this.state.email} />
               </div>  
             </div>
             <div className="PopupForm__row">
               <div className="PopupForm__col--full">
                 <label className="PopupForm__label">Your message:</label>
-                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea}/>
+                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea} placeholder={this.state.value}/>
               </div>
             </div>
-            <button onClick={this.Addletter} className="PopupForm__btn">SEND</button>
+            <button className="PopupForm__btn">SEND</button>
+            
           </form>
         </div>
       </div>
@@ -89,6 +81,15 @@ class PopupForm extends React.Component {
   }
 }
 
-export default PopupForm;
+
+const mapStateToProps = (state) => ({
+    items: state.addingLetterReducer
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addMessage: (text,name,email) => dispatch(addLetter(text,name,email))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PopupForm)
 
 

@@ -41,9 +41,9 @@ function App(props) {
                   </Helmet>
                   <Header isMainPage={false} />
          
-                  <Content works={props.dates.letter.works}/>
+                  <Content/>
             </Route>
-            <PopupForm dispatch={props.dispatch}/>
+            <PopupForm/>
             <Footer/>
         </div>  
   );
