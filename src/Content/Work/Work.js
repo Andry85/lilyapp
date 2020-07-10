@@ -5,9 +5,6 @@ import './Work.css';
 
 
 class Work extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="work-wrap">
@@ -17,7 +14,7 @@ class Work extends React.Component {
           {this.props.images}
         </ul>
         <div className="work__visit">
-          Visit: <a className="work__url" href={this.props.urlLink} target="_blank">{this.props.urlText}</a>
+          Visit: <a className="work__url" href={this.props.urlLink} target="_blank" rel="noopener noreferrer">{this.props.urlText}</a>
         </div>
         
       </div>

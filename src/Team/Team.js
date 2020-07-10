@@ -40,7 +40,7 @@ const workers = [
 function WorkersTeam(props) {
   const items = workers.map((worker) =>
     <li key={worker.id}>
-      <img src={worker.img} />
+      <img src={worker.img} alt="" />
       <div className="WorkersTeamInner">
         <h3 className="WorkersTeam__title">{worker.name}</h3>
         <p className="WorkersTeam__desc">{worker.position}</p>
@@ -54,10 +54,6 @@ function WorkersTeam(props) {
 }
 
 class Team extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
   render() {
     return (
       <section id="team" className="team">

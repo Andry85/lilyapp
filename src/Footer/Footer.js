@@ -11,13 +11,13 @@ class Footer extends React.Component {
           <p className="footer__copy">© 2014–2019. All rights reserved.</p>
           <ul className="social">
             <li>
-              <a className="social__instagram" href="#"></a>
+              <a className="social__instagram" href="google.com"></a>
             </li>
             <li>
-              <a className="social__linkedin" href="#"></a>
+              <a className="social__linkedin" href="google.com"></a>
             </li>
             <li>
-              <a className="social__behance" href="#"></a>
+              <a className="social__behance" href="google.com"></a>
             </li>
           </ul>
         </div>

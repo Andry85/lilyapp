@@ -60,27 +60,20 @@ const works = [
 
 
 class Content extends React.Component {
-  constructor(props) {
-    super(props);
-
-
-    
-
-  }
   render() {
     const content_1 = works[0].pictures.map((img) =>
       <li key={img.toString()}>
-        <img src={img} />
+        <img src={img} alt="" />
       </li>
     );
     const content_2 = works[1].pictures.map((img) =>
       <li key={img.toString()}>
-        <img src={img} />
+        <img src={img} alt="" />
       </li>
     );
     const content_3 = works[2].pictures.map((img) =>
       <li key={img.toString()}>
-        <img src={img} />
+        <img src={img} alt="" />
       </li>
     );
     return (

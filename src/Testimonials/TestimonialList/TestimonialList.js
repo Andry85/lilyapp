@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Slider from "react-slick";
 import './TestimonialList.css';
 
@@ -44,7 +44,7 @@ class TestimonialList extends React.Component {
           <div key={testimonial.toString()} className="testimonialsList__slide">
             <div className="testimonialsList__inner">
               <figure className="testimonialsList__avatar">
-                <img src={testimonial.img} />
+                <img src={testimonial.img} alt="" />
               </figure> 
               <div className="testimonialsList__desc">
                 {testimonial.text}

@@ -4,12 +4,6 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 
 class NavElement extends React.Component {
-  constructor(props) {
-    super(props)
-
-    
-  }
-
   render() {
     return (
       <li className="nav__item" onClick={this.props.action}>
@@ -24,11 +18,6 @@ class NavElement extends React.Component {
 
 
 class NavBtn extends React.Component {
-  constructor(props) {
-    super(props)
-    
-  }
-
   render() {
     return (
       <div onClick={this.props.action} className= {this.props.classNameIs ? "navWrap__mobileMenu opened" : "navWrap__mobileMenu"}>
@@ -67,12 +56,10 @@ class Nav extends React.Component {
       mobileMenuIsHidden: !this.state.mobileMenuIsHidden,
       condition: !this.state.condition,
     });
-    if(this.state.isClicked == true) {
+    if(this.state.isClicked === true) {
       this.setState({
         isClicked: false,
       });
-
-      console.log(`isClicked: ${this.state.isClicked}`);
     }
 
     

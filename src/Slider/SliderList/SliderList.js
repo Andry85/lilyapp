@@ -1,12 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 import ifs_01 from './Img/ifs_01.jpg';
