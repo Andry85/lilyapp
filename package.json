@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://andry85.github.io/lilyapp/",
   "dependencies": {
+    "axios": "^0.19.2",
     "google-maps-react": "^2.0.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
