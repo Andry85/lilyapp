@@ -41,7 +41,7 @@ class Nav extends React.Component {
       listElements: [
         { elId: 1, elentHref: "/", elentText: "Home"},
         { elId: 2, elentHref: "/#portfolio", elentText: "Portfolio"},
-        { elId: 3, elentHref: "/#team", elentText: "Team"},
+        // { elId: 3, elentHref: "/#team", elentText: "Team"},
         { elId: 4, elentHref: "/#testimonials", elentText: "testimonials"},
         { elId: 5, elentHref: "/#contacts", elentText: "Contacts"},
       ],
