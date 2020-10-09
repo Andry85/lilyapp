@@ -78,6 +78,19 @@ input.PopupForm__field {
     flex-basis: 100%;
 }
 
+.sent {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
+.sent-secces {
+    color: green;
+    
+}
+.sent-error {
+    color: red;
+}
+
 
 @media only screen and (max-width: 767px) {
     

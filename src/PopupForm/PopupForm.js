@@ -11,9 +11,11 @@ class PopupForm extends React.Component {
     this.myRefForm = React.createRef();
     
     this.state = {
-      name: 'Enter Your name',
-      email: 'Enter Your email',
-      message: 'Enter Your message'
+      name: '',
+      email: '',
+      message: '',
+      status: false,
+      mailwasSent: false
     };
 
     this.handleTextArea = this.handleTextArea.bind(this);
@@ -48,10 +50,33 @@ class PopupForm extends React.Component {
       data:  this.state
     }).then((response)=>{
       if (response.data.status === 'success'){
-        alert("Message Sent."); 
+
+        this.setState(state => ({
+          status: true,
+          mailwasSent: true
+        }));
+        setTimeout(() => {
+          this.setState(state => ({
+            status: false,
+            mailwasSent: false
+          })); 
+        }, 3000);
+
         this.resetForm()
       }else if(response.data.status === 'fail'){
-        alert("Message failed to send.")
+
+        this.setState(state => ({
+          status: false,
+          mailwasSent: true
+        })); 
+        
+        setTimeout(() => {
+          this.setState(state => ({
+            status: false,
+            mailwasSent: false
+          })); 
+        }, 3000);
+
       }
     })
 
@@ -68,6 +93,16 @@ class PopupForm extends React.Component {
  }
 
   render() {
+
+    const status = this.state.status;
+    const wasSent = this.state.mailwasSent;
+    let  sucsessText;
+    if (status && wasSent) {
+      sucsessText = <p className="sent sent-secces">Message Sent.</p>;
+    } else if (!status && wasSent) {
+      sucsessText = <p className="sent sent-error">Message failed to send.</p>;
+    }
+
     return (
       <div id="PopupForm" className="PopupForm" ref={this.myRefForm}>
         <div className="PopupForm__form">
@@ -76,20 +111,22 @@ class PopupForm extends React.Component {
             <div className="PopupForm__row">
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your name:</label>
-                <input className="PopupForm__field" type="text" onChange={this.handleName} value={this.state.name} />
+                <input className="PopupForm__field" type="text" onChange={this.handleName} value={this.state.name} placeholder="Enter Your name" />
               </div>
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your email:</label>
-                <input className="PopupForm__field" type="email" onChange={this.handleEmail} value={this.state.email} />
+                <input className="PopupForm__field" type="email" onChange={this.handleEmail} value={this.state.email} placeholder="Enter Your email" />
               </div>  
             </div>
             <div className="PopupForm__row">
               <div className="PopupForm__col--full">
                 <label className="PopupForm__label">Your message:</label>
-                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea} value={this.state.message} />
+                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea} value={this.state.message} placeholder="Enter Your message" />
               </div>
             </div>
             <button className="PopupForm__btn">SEND</button>
+
+            {sucsessText}
             
           </form>
         </div>

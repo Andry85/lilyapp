@@ -28,7 +28,7 @@ function App(props) {
                 </Helmet>
                 <Header isMainPage={true}/>
                 <Slider/>
-                <Team />
+                {/* <Team /> */}
                 <Testimonials/>
                 <MapContainer/>
                 
