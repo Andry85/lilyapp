@@ -12,7 +12,6 @@ class HeaderInner extends React.Component {
         <h1 className="header__title">Creating beautiful sites.</h1>
         <Btn text="Get started" />
       </div>
-      
     );
   }
 }

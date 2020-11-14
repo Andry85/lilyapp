@@ -28,7 +28,7 @@ function App(props) {
                 </Helmet>
                 <Header isMainPage={true}/>
                 <Slider/>
-                {/* <Team /> */}
+                <Team />
                 <Testimonials/>
                 <MapContainer/>
                 
@@ -40,7 +40,6 @@ function App(props) {
                       <meta name="description" content="Creating web sites and web applications works" />
                   </Helmet>
                   <Header isMainPage={false} />
-         
                   <Content/>
             </Route>
             <PopupForm/>
