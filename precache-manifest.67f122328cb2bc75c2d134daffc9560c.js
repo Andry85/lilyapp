@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2cbd116171859d9d46bd8db31118b52b",
+    "revision": "a86465107c4bd56a5e3a9a2ebc9a1d6b",
     "url": "/lilyapp/index.html"
   },
   {
-    "revision": "b2d629a907f43126434b",
-    "url": "/lilyapp/static/css/main.74a49c6b.chunk.css"
+    "revision": "95c2dd40ef882e48ff18",
+    "url": "/lilyapp/static/css/main.f204b83d.chunk.css"
   },
   {
-    "revision": "c969ce363d2640c13527",
-    "url": "/lilyapp/static/js/2.89612bc3.chunk.js"
+    "revision": "93a5750dfcecbe54e8f6",
+    "url": "/lilyapp/static/js/2.956e2cd8.chunk.js"
   },
   {
-    "revision": "b2d629a907f43126434b",
-    "url": "/lilyapp/static/js/main.97fc5635.chunk.js"
+    "revision": "95c2dd40ef882e48ff18",
+    "url": "/lilyapp/static/js/main.be74b3cf.chunk.js"
   },
   {
     "revision": "035c282c7f0cec316286",
@@ -50,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9aece1ff96b391fb73d6517d71de2187",
     "url": "/lilyapp/static/media/ifs_03.9aece1ff.png"
+  },
+  {
+    "revision": "7d2d4ee9be178a5b4cd77f43bf97bf9d",
+    "url": "/lilyapp/static/media/ivanov_andrii.7d2d4ee9.png"
   },
   {
     "revision": "d70be953bd69d8491c80ff0d8e7758b4",
