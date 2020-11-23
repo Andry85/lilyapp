@@ -7,7 +7,7 @@ import Testimonials from './Testimonials/Testimonials';
 import MapContainer from './MapContainer/MapContainer';
 import Footer from './Footer/Footer';
 import PopupForm from './PopupForm/PopupForm';
-import Content from './Content/Content';
+import Work from './Work/Work';
 import {
   Route,
 } from "react-router-dom";
@@ -33,14 +33,14 @@ function App(props) {
                 <MapContainer/>
                 
             </Route>
-            <Route path="/content/">
+            <Route path="/works/:id">
                   <Helmet>
                       <meta charSet="utf-8" />
                       <title>Lily web agency work</title>
                       <meta name="description" content="Creating web sites and web applications works" />
                   </Helmet>
                   <Header isMainPage={false} />
-                  <Content/>
+                  <Work />
             </Route>
             <PopupForm/>
             <Footer/>

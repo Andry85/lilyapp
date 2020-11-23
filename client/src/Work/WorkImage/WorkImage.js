@@ -1,0 +1,41 @@
+import React from 'react';
+import {Link} from "react-router-dom";
+import axios from 'axios';
+
+
+
+
+class WorkImage extends React.Component {
+
+  state = {
+    images: []
+  }
+
+  componentDidMount() {
+
+    const {featured_media} = this.props;
+
+    axios.get(`/wp-json/wp/v2/media/${featured_media}`)
+    .then(res => {
+        const images = res.data;
+        this.setState({ images }); 
+    });
+
+  }
+
+  render() {
+    
+    return (    
+        <ul className="workList">
+            <li>
+                <figure>
+                    <img src={this.state.images.source_url} alt="" />
+                </figure>
+            </li>    
+        </ul>
+        
+    );
+  }
+}
+
+export default WorkImage;
