@@ -40,7 +40,6 @@ class Team extends React.Component {
     
 
     if (this.state.loading) {
-      console.log('people',this.state.people);
         return (
           <section id="team" className="team">
             <div className="team_circle"></div>
