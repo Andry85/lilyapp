@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import SliderItem from './SliderItem/SliderItem';
 
+import {API_URL} from '../../const';
+
 
 
 class SliderList extends React.Component {
@@ -16,7 +18,7 @@ class SliderList extends React.Component {
 
   componentDidMount() {
     
-    axios.get('/wp-json/wp/v2/works')
+    axios.get(`${API_URL}/wp-json/wp/v2/works`)
       .then(res => {
         const works = res.data;
         this.setState({ works }); 

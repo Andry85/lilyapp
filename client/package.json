@@ -2,7 +2,8 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://andry85.github.io/lilyapp/",
+  "homepage": "/lilyapp/client/build/",
+  "main": "index.js",
   "dependencies": {
     "@storybook/addon-essentials": "^6.0.28",
     "axios": "^0.19.2",

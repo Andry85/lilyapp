@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 
 import axios from 'axios';
 
+import {API_URL} from '../const';
+
 
 
 export default function Wor() {
@@ -20,7 +22,7 @@ export default function Wor() {
   useEffect(() => {
 
     
-    axios.get(`/wp-json/wp/v2/works/${id}`)
+    axios.get(`${API_URL}/wp-json/wp/v2/works/${id}`)
       .then(res => {
         const work = res.data;
         setWork(work);  

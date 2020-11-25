@@ -4,6 +4,8 @@ import TestimonialList from './TestimonialList/TestimonialList';
 
 import axios from 'axios';
 
+import {API_URL} from '../const';
+
 
 class Testimonials extends React.Component {
 
@@ -14,7 +16,7 @@ class Testimonials extends React.Component {
 
   componentDidMount() {
 
-    axios.get('/wp-json/wp/v2/testimonials')
+    axios.get(`${API_URL}/wp-json/wp/v2/testimonials`)
       .then(res => {
         console.log('testimonials', res);
         const testimonials = res.data;

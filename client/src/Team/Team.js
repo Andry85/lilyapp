@@ -3,6 +3,8 @@ import './Team.css';
 
 import axios from 'axios';
 
+import {API_URL} from '../const';
+
 
 
 class Team extends React.Component {
@@ -15,7 +17,7 @@ class Team extends React.Component {
 
   componentDidMount() {
 
-    axios.get('/wp-json/wp/v2/team')
+    axios.get(`${API_URL}/wp-json/wp/v2/team`)
       .then(res => {
         console.log('res',res);
         const team = res.data;
@@ -25,7 +27,7 @@ class Team extends React.Component {
         }); 
     });
 
-    axios.get('/wp-json/wp/v2/pages')
+    axios.get(`${API_URL}/wp-json/wp/v2/pages`)
       .then(res => {
         console.log('pages',res);
         const pages = res.data;

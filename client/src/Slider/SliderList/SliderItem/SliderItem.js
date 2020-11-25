@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import axios from 'axios';
 
+import {API_URL} from '../../../const';
+
 
 
 
@@ -15,7 +17,7 @@ class SliderItem extends React.Component {
 
     const {featured_media} = this.props;
 
-    axios.get(`/wp-json/wp/v2/media/${featured_media}`)
+    axios.get(`${API_URL}/wp-json/wp/v2/media/${featured_media}`)
     .then(res => {
         console.log('Images', res);
         const images = res.data;
