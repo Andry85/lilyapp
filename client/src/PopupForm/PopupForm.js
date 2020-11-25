@@ -44,8 +44,6 @@ class PopupForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     
-    
-
     axios({
       method: 'post',
       url: `${API_PATH}`,
@@ -60,27 +58,18 @@ class PopupForm extends React.Component {
           mailSent: result.data.sent
         })
 
-        
-
-        console.log('this.state:', this.state);
     })
     .catch(error => this.setState({ error: error.message }));
-
-
 
   }
 
   hidepopup() {
     this.myRefForm.current.classList.remove("visible");
+    this.setState({name: '', email: '', message: ''})
   }
 
   
-  resetForm() {
-      this.setState({name: '', email: '', message: ''})
-  }
-
   render() {
-
 
     return (
       <div id="PopupForm" className="PopupForm" ref={this.myRefForm}>
