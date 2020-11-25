@@ -4,6 +4,8 @@ import './PopupForm.css';
 import {addLetter} from '../actions/actions';
 import axios from 'axios';
 
+const API_PATH = '/api/contact/index.php';
+
 
 class PopupForm extends React.Component {
   constructor(props) {
@@ -14,8 +16,8 @@ class PopupForm extends React.Component {
       name: '',
       email: '',
       message: '',
-      status: false,
-      mailwasSent: false
+      mailSent: false,
+      error: null
     };
 
     this.handleTextArea = this.handleTextArea.bind(this);
@@ -41,44 +43,30 @@ class PopupForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
-    this.myRefForm.current.classList.remove("visible");
+    
+    
 
     axios({
-      method: "POST", 
-      url:"http://localhost:3002/send", 
-      data:  this.state
-    }).then((response)=>{
-      if (response.data.status === 'success'){
-
-        this.setState(state => ({
-          status: true,
-          mailwasSent: true
-        }));
-        setTimeout(() => {
-          this.setState(state => ({
-            status: false,
-            mailwasSent: false
-          })); 
-        }, 3000);
-
-        this.resetForm()
-      }else if(response.data.status === 'fail'){
-
-        this.setState(state => ({
-          status: false,
-          mailwasSent: true
-        })); 
-        
-        setTimeout(() => {
-          this.setState(state => ({
-            status: false,
-            mailwasSent: false
-          })); 
-        }, 3000);
-
-      }
+      method: 'post',
+      url: `${API_PATH}`,
+      headers: { 
+        'content-type': 'application/json', 
+      },
+      data: this.state
     })
+    .then(result => {
+        
+        this.setState({
+          mailSent: result.data.sent
+        })
+
+        
+
+        console.log('this.state:', this.state);
+    })
+    .catch(error => this.setState({ error: error.message }));
+
+
 
   }
 
@@ -87,21 +75,12 @@ class PopupForm extends React.Component {
   }
 
   
-  resetForm(){
-    
-    this.setState({name: '', email: '', message: ''})
- }
+  resetForm() {
+      this.setState({name: '', email: '', message: ''})
+  }
 
   render() {
 
-    const status = this.state.status;
-    const wasSent = this.state.mailwasSent;
-    let  sucsessText;
-    if (status && wasSent) {
-      sucsessText = <p className="sent sent-secces">Message Sent.</p>;
-    } else if (!status && wasSent) {
-      sucsessText = <p className="sent sent-error">Message failed to send.</p>;
-    }
 
     return (
       <div id="PopupForm" className="PopupForm" ref={this.myRefForm}>
@@ -111,22 +90,26 @@ class PopupForm extends React.Component {
             <div className="PopupForm__row">
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your name:</label>
-                <input className="PopupForm__field" type="text" onChange={this.handleName} value={this.state.name} placeholder="Enter Your name" />
+                <input className="PopupForm__field" type="text" onChange={this.handleName} value={this.state.name} id="name" name="name" placeholder="Enter Your name" />
               </div>
               <div className="PopupForm__col">
                 <label className="PopupForm__label">Your email:</label>
-                <input className="PopupForm__field" type="email" onChange={this.handleEmail} value={this.state.email} placeholder="Enter Your email" />
+                <input className="PopupForm__field" type="email" onChange={this.handleEmail} value={this.state.email} id="email" name="email" placeholder="Enter Your email" />
               </div>  
             </div>
             <div className="PopupForm__row">
               <div className="PopupForm__col--full">
                 <label className="PopupForm__label">Your message:</label>
-                <textarea className="PopupForm__field PopupForm__field--area" onChange={this.handleTextArea} value={this.state.message} placeholder="Enter Your message" />
+                <textarea className="PopupForm__field PopupForm__field--area" id="message" name="message" onChange={this.handleTextArea} value={this.state.message} placeholder="Enter Your message" />
               </div>
             </div>
             <button className="PopupForm__btn">SEND</button>
 
-            {sucsessText}
+            <div className="sent sent-secces">
+              {this.state.mailSent &&
+                <div>Thank you for contcting us.</div>
+              }
+            </div>
             
           </form>
         </div>
