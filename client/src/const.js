@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost/lilyapp';
+export const API_URL = process.env.NODE_ENV === 'development' ? '' : 'http://www.lilyweb.agency';

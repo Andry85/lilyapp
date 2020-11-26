@@ -1,11 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
-import {Link} from "react-router-dom";
-
 import axios from 'axios';
-
 import SliderItem from './SliderItem/SliderItem';
-
 import {API_URL} from '../../const';
 
 
@@ -27,7 +23,6 @@ class SliderList extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     var settings = {
       dots: false,
       infinite: true,

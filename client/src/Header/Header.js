@@ -20,8 +20,7 @@ class HeaderInner extends React.Component {
 class Header extends React.Component {
   render() {
     const isMainPage = this.props.isMainPage;
-    console.log(isMainPage);
-    
+
     let isheaderInner;
     let headerClass;
 

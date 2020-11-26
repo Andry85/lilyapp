@@ -1,5 +1,5 @@
 .header {
-    background: #7C6DDA url(./img/header_bg.png) center top no-repeat;
+    background: #7C6DDA url("./img/header_bg.png") center top no-repeat;
     background-size: cover;
     min-height: 100vh;
     width: 100%;

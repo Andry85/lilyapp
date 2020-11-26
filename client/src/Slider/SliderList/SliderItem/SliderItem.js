@@ -19,7 +19,6 @@ class SliderItem extends React.Component {
 
     axios.get(`${API_URL}/wp-json/wp/v2/media/${featured_media}`)
     .then(res => {
-        console.log('Images', res);
         const images = res.data;
         this.setState({ images }); 
     });

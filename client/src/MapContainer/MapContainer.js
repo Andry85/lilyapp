@@ -22,14 +22,14 @@ class MapContainer extends React.Component {
                   <span className="phone_icon"></span>
                   Phone
               </div>
-              <p>+38068328541</p>
+              <p>+38(068)-328-85-41</p>
             </li>
             <li>
               <div className="mapList__title">
                   <span className="email_icon"></span>
                   E-mail
               </div>
-              <p>lilyagency@gmail.com</p>
+              <p>lilywebagency@gmail.com</p>
             </li>
           </ul>
         </div>

@@ -29,7 +29,7 @@ export default function Wor() {
         setLoading(true); 
     });
 
-  }, []);
+  }, [id]);
 
   if (loading) {
     return (

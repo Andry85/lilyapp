@@ -19,7 +19,6 @@ class Team extends React.Component {
 
     axios.get(`${API_URL}/wp-json/wp/v2/team`)
       .then(res => {
-        console.log('res',res);
         const team = res.data;
         this.setState({ 
           people: team,
@@ -29,7 +28,6 @@ class Team extends React.Component {
 
     axios.get(`${API_URL}/wp-json/wp/v2/pages`)
       .then(res => {
-        console.log('pages',res);
         const pages = res.data;
         this.setState({ 
           pages

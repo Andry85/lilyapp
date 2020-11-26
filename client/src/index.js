@@ -5,13 +5,9 @@ import './index.css';
 import App from './App';
 import {HashRouter as Router, Switch,} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
-
 import { createStore } from 'redux';
 import lilyApp from './reducers';
 const store = createStore(lilyApp);
-
-console.log(store.getState())
-
 
 
 ReactDOM.render(

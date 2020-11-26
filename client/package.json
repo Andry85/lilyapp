@@ -5,10 +5,7 @@
   "homepage": "/lilyapp/client/build/",
   "main": "index.js",
   "dependencies": {
-    "@storybook/addon-essentials": "^6.0.28",
     "axios": "^0.19.2",
-    "formik": "^2.2.5",
-    "frontity-contact-form-7": "^0.1.7",
     "google-maps-react": "^2.0.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
@@ -22,9 +19,7 @@
     "react-scripts": "3.1.2",
     "react-slick": "^0.25.2",
     "redux": "^4.0.5",
-    "snyk": "^1.421.1",
-    "styled-components": "^5.2.1",
-    "use-formik": "0.0.1"
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "predeploy": "npm run build",

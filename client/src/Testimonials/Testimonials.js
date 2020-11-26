@@ -18,7 +18,6 @@ class Testimonials extends React.Component {
 
     axios.get(`${API_URL}/wp-json/wp/v2/testimonials`)
       .then(res => {
-        console.log('testimonials', res);
         const testimonials = res.data;
         this.setState({ 
           testimonials,
