@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/lilyapp/client/build/",
+  "homepage": "/client/build/",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
