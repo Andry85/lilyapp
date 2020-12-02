@@ -9,20 +9,30 @@ import {API_URL} from '../../../const';
 
 class SliderItem extends React.Component {
 
+  _isMounted = false;
+
   state = {
     images: []
   }
 
   componentDidMount() {
 
+    this._isMounted = true;
+
     const {featured_media} = this.props;
 
     axios.get(`${API_URL}/wp-json/wp/v2/media/${featured_media}`)
     .then(res => {
-        const images = res.data;
-        this.setState({ images }); 
+      if (this._isMounted) {
+          const images = res.data;
+          this.setState({ images }); 
+      }
     });
 
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

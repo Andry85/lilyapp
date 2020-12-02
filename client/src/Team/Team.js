@@ -9,6 +9,8 @@ import {API_URL} from '../const';
 
 class Team extends React.Component {
 
+  _isMounted = false;
+
   state = {
     people: [],
     loading: false,
@@ -17,23 +19,33 @@ class Team extends React.Component {
 
   componentDidMount() {
 
+    this._isMounted = true;
+
     axios.get(`${API_URL}/wp-json/wp/v2/team`)
       .then(res => {
-        const team = res.data;
-        this.setState({ 
-          people: team,
-          loading: true
-        }); 
+        if (this._isMounted) {
+          const team = res.data;
+          this.setState({ 
+            people: team,
+            loading: true
+          });
+        }
     });
 
     axios.get(`${API_URL}/wp-json/wp/v2/pages`)
       .then(res => {
-        const pages = res.data;
-        this.setState({ 
-          pages
-        }); 
+        if (this._isMounted) {
+          const pages = res.data;
+          this.setState({ 
+            pages
+          }); 
+        }
     });
 
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

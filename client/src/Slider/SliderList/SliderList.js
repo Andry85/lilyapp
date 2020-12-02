@@ -8,18 +8,27 @@ import {API_URL} from '../../const';
 
 class SliderList extends React.Component {
 
+  _isMounted = false;
+
   state = {
     works: []
   }
 
   componentDidMount() {
+    this._isMounted = true;
     
     axios.get(`${API_URL}/wp-json/wp/v2/works`)
       .then(res => {
-        const works = res.data;
-        this.setState({ works }); 
+        if (this._isMounted) {
+          const works = res.data;
+          this.setState({ works }); 
+        }
     });
 
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

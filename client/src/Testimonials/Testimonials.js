@@ -9,6 +9,8 @@ import {API_URL} from '../const';
 
 class Testimonials extends React.Component {
 
+  _isMounted = false;
+
   state = {
     testimonials: [],
     loading: false,
@@ -16,16 +18,24 @@ class Testimonials extends React.Component {
 
   componentDidMount() {
 
+    this._isMounted = true;
+
     axios.get(`${API_URL}/wp-json/wp/v2/testimonials`)
       .then(res => {
-        const testimonials = res.data;
-        this.setState({ 
-          testimonials,
-          loading: true
-        }); 
+        if (this._isMounted) {
+          const testimonials = res.data;
+          this.setState({ 
+            testimonials,
+            loading: true
+          }); 
+        }
     });
 
 
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

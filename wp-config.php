@@ -20,13 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+
+/* localhost */
+// define( 'DB_NAME', 'lily' );
+// define( 'DB_USER', 'root' );
+// define( 'DB_PASSWORD', '' );
+
+/* http://www.lilyweb.agency/ */
 define( 'DB_NAME', 'lily' );
-
-/** MySQL database username */
-define( 'DB_USER', 'root' );
-
-/** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_USER', 'h75140' );
+define( 'DB_PASSWORD', 'khEnen4902' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
