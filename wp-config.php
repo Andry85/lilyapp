@@ -29,7 +29,7 @@
 /* http://www.lilyweb.agency/ */
 define( 'DB_NAME', 'lily' );
 define( 'DB_USER', 'h75140' );
-define( 'DB_PASSWORD', 'khEnen4902' );
+define( 'DB_PASSWORD', 'khEnen4902');
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
